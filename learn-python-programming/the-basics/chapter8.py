@@ -65,3 +65,18 @@ print(list(itertools.chain(range(0, 3), range(10, 13))))
 print(list(zip(range(0, 3), range(10, 13))))
 print(list(zip(range(0, 3), range(10, 14))))
 print(list(itertools.zip_longest(range(0, 3), range(10, 14))))
+
+translation_table = {ord('A'): ord('O')}
+print(translation_table)
+
+print('MARK'.translate(translation_table))
+
+characters = tuple(ord(c) for c in 'SMEDONRY')
+print(characters)
+guess = tuple(ord(c) for c in '91570682')
+print(translation_table)
+
+translation_table = dict(zip(characters, guess))
+print(translation_table)
+
+print('SEND + MORE == MONEY'.translate(translation_table))
