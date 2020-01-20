@@ -38,3 +38,21 @@ for word in 'hello world this is a very nice day'.split():
     counts[word] += 1
 
 counts
+
+import os
+from collections import ChainMap
+
+commnad_line_options = {}
+config_file_options = {'optname': 'somevalue'}
+
+options = ChainMap(commnad_line_options, os.environ, config_file_options)
+value = options.get('optname', 'default-value')
+print(value)
+
+options = ChainMap(commnad_line_options, os.environ, config_file_options, defaultdict(lambda: 'default-value'))
+value = options['optname']
+value2 = options['other-option']
+
+value
+value2
+
