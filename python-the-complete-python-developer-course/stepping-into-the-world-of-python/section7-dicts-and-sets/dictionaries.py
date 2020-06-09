@@ -35,8 +35,27 @@ while True:
     dict_key = input("Please enter a fruit:")
     if dict_key == "quit":
         break
-    if dict_key in fruit:
-        desctiption = fruit.get(dict_key)
-        print(desctiption)
-    else:
-        print("we don't have a " + dict_key)
+    desctiption = fruit.get(dict_key, "We don't have a " + dict_key)
+    # if dict_key in fruit:
+    #     desctiption = fruit.get(dict_key)
+    #     print(desctiption)
+    # else:
+    #     print("we don't have a " + dict_key)
+
+
+for i in range(10):
+    for snack in fruit:
+        print(snack + " is " + fruit[snack])
+
+ordered_keys = list(fruit.keys())
+ordered_keys.sort()
+
+for f in ordered_keys:
+    print(f + " - " + fruit[f])
+
+for val in fruit.values():
+    print(val)
+
+print(fruit.keys())
+
+print(fruit.values())
